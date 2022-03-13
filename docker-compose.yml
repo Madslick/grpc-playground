@@ -1,0 +1,15 @@
+version: "3"
+services:
+  publisher-py:
+    build: ./publisher
+    volumes: 
+      - ./publisher:/app
+    stdin_open: true
+    tty: true
+
+  subscriber-go:
+    build: ./subscriber
+    volumes:
+      - ./subscriber:/go/src/github.com/Madslick/grpc-playground/
+    stdin_open: true
+    tty: true
